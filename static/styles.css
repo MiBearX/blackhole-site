@@ -1,0 +1,90 @@
+/* Base styling */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #00ffff;
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs and lists */
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+ul {
+    max-width: 750px;
+    margin: 10px auto 30px auto;
+    padding-left: 20px;
+    font-size: 1.05em;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Center canvas or media */
+canvas {
+    display: block;
+    margin: 40px auto;
+    border: 2px solid #444;
+    background-color: #111;
+}
+
+/* Responsive spacing */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+}
+img {
+    display: block;
+    margin: 30px auto;
+    max-width: 100%;
+    height: auto;
+}

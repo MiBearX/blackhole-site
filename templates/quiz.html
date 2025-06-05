@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Black Hole Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Take the Black Hole Quiz!</h1>
+    <p style="text-align: center;"><a href="/">← Back to Home</a></p>
+
+    <form id="quizForm" style="max-width: 700px; margin: 0 auto;">
+
+    <p><strong>1. What is the event horizon?</strong></p>
+    <input type="radio" name="q1" value="a"> A bright ring around a black hole<br>
+    <input type="radio" name="q1" value="b"> The surface of the black hole<br>
+    <input type="radio" name="q1" value="c"> <strong>The boundary beyond which nothing can escape</strong><br><br>
+
+    <p><strong>2. Who predicted Hawking radiation?</strong></p>
+    <input type="radio" name="q2" value="a"> Albert Einstein<br>
+    <input type="radio" name="q2" value="b"> <strong>Stephen Hawking</strong><br>
+    <input type="radio" name="q2" value="c"> Isaac Newton<br><br>
+
+    <p><strong>3. What is inside a black hole's center?</strong></p>
+    <input type="radio" name="q3" value="a"> A neutron star<br>
+    <input type="radio" name="q3" value="b"> <strong>A singularity</strong><br>
+    <input type="radio" name="q3" value="c"> A wormhole<br><br>
+
+    <p><strong>4. What happens to time near a black hole?</strong></p>
+    <input type="radio" name="q4" value="a"> It speeds up<br>
+    <input type="radio" name="q4" value="b"> <strong>It slows down</strong><br>
+    <input type="radio" name="q4" value="c"> It runs backwards<br><br>
+
+    <p><strong>5. What did LIGO detect in 2015?</strong></p>
+    <input type="radio" name="q5" value="a"> Hawking radiation<br>
+    <input type="radio" name="q5" value="b"> Black hole imaging<br>
+    <input type="radio" name="q5" value="c"> <strong>Gravitational waves</strong><br><br>
+
+    <button type="button" onclick="gradeQuiz()">Submit</button>
+    </form>
+
+    <p id="quizResult" style="text-align: center; font-size: 1.3em; margin-top: 20px;"></p>
+
+    <script>
+    function gradeQuiz() {
+    const answers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'c'
+    };
+
+    let score = 0;
+    for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+        score++;
+        }
+    }
+
+    const percentage = (score / Object.keys(answers).length) * 100;
+    document.getElementById('quizResult').innerText = `You scored ${percentage}%`;
+    }
+    </script>
+</body>
+</html>
+
